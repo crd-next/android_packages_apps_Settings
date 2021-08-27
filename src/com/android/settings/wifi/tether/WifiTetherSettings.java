@@ -203,6 +203,11 @@ public class WifiTetherSettings extends RestrictedDashboardFragment
             mSwitchBarController.stopTether();
         }
         mWifiManager.setSoftApConfiguration(config);
+        use(WifiTetherAutoOffPreferenceController.class).updateDisplay();
+
+        if (context instanceof WifiTetherSecurityPreferenceController) {
+            reConfigInitialExpandedChildCount();
+        }
     }
 
     private SoftApConfiguration buildNewConfig() {
