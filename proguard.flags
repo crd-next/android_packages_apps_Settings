@@ -76,3 +76,6 @@
 -keep class com.android.settings.deviceinfo.ImsConnector {
     *;
 }
+
+# Custom rules
+-keep class com.google.** { *; }
